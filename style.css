@@ -26,10 +26,13 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.logo {
+
+/* Logo Section */
+.logo a {
     font-size: 24px;
     font-weight: bold;
-    color: #333;
+    color: #111;
+    text-decoration: none;
 }
 
 nav ul {
@@ -102,7 +105,6 @@ nav ul li a:hover {
 .get-started:hover {
     background-color: #7352d4;
 }
-
 /* Hero Section */
 .hero-section {
     background-color: #f8f8f8;
@@ -195,6 +197,62 @@ nav ul li a:hover {
     transform: translateY(-5px);
 }
 
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    /* For Tablets */
+    .hero-section h1 {
+        font-size: 30px;
+    }
+    
+    .hero-section p {
+        font-size: 14px;
+    }
+    
+    .categories {
+        grid-template-columns: 1fr;
+    }
+    
+    .sofa-image {
+        width: 100%;
+    }
+
+    .accessories-image, .kitchen-image, .bedroom-image {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    /* For Mobile Phones */
+    .hero-section h1 {
+        font-size: 24px;
+    }
+    
+    .hero-section p {
+        font-size: 12px;
+    }
+    
+    .hero-section img {
+        max-width: 100%;
+    }
+
+    .categories {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .categories div {
+        padding: 15px;
+    }
+
+    .sofa-image {
+        width: 100%;
+    }
+
+    .accessories-image, .kitchen-image, .bedroom-image {
+        width: 100%;
+    }
+}
+
 /* Shop Now Button */
 .shop-now {
     background-color: transparent;
@@ -245,25 +303,57 @@ h1 {
 }
 
 /* Gallery Section */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 15px;
-    margin-top: 30px;
+.result h3{
+    font-size: 1em;
+    padding-bottom: 10px;
+    color: #2E2F33;
+    
 }
-
-.gallery-item {
-    background-color: white;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.con-box{
+    text-align: center;
+    padding: 32px;
 }
-
-.gallery-item img {
+.box{
+   display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.box .dream{
+    display: flex;
+    flex-direction: column;
+    width: 32.5%;   
+}
+.box .dream img{
     width: 100%;
-    height: auto;
-    border-radius: 8px;
+    padding-bottom: 15px;
+    border-radius: 5px;
 }
+.buton{
+    
+    margin: 2px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color:#F3F4F7;
+    color:#2E2F33;
+    text-decoration: none;
+    border-radius: 18px;
+    border: 1px solid #2E2F33;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+
+}
+.buton a{
+    color:#2E2F33;
+    text-decoration:none ;
+    
+    font-size: 1.2em;
+
+}
+.buton:hover {
+    background-color: #666;
+}
+
+
 /* Load More Button */
 .load-more {
     display: block;
@@ -278,6 +368,46 @@ h1 {
     text-align: center;
 }
 
+/* For tablet screens (max-width: 768px) */
+@media (max-width: 768px) {
+    .box .dream {
+        width: 45%; /* Two columns on tablet screens */
+    }
+
+    .result h3 {
+        font-size: 1.2em; /* Increase font size for better readability */
+    }
+
+    .buton {
+        font-size: 1.1rem; /* Slightly larger buttons on tablet */
+    }
+}
+
+/* For mobile screens (max-width: 480px) */
+@media (max-width: 480px) {
+    .box {
+        flex-direction: column; /* Stack images vertically on mobile */
+    }
+
+    .box .dream {
+        width: 100%; /* Full width for images on mobile */
+        margin-bottom: 20px; /* Add spacing between sections */
+    }
+
+    .result h3 {
+        font-size: 1.4em; /* Larger text for mobile readability */
+    }
+
+    .buton {
+        font-size: 1rem; /* Ensure buttons don't get too big on mobile */
+        width: 100%; /* Full width buttons on mobile */
+        padding: 10px 0;
+    }
+
+    .load-more {
+        width: 100%; /* Full width load more button on mobile */
+    }
+}
 /* Top Products Section */
 .top-products {
     margin: 40px 0;
@@ -435,9 +565,9 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    flex-wrap: wrap; /* Ensures items wrap to the next line on smaller screens */
+    flex-wrap: wrap; 
     justify-content: space-between;
-    align-items: flex-start; /* Aligns items at the start for better vertical alignment */
+    align-items: flex-start; 
     padding: 20px;
 }
 
@@ -445,7 +575,7 @@ footer {
     color: #ffffff;
     font-size: 24px;
     margin-top: 24px;
-    margin-bottom: 20px; /* Provides spacing for alignment on small screens */
+    margin-bottom: 20px; 
 }
 
 .breadcrumbs {
@@ -473,7 +603,7 @@ footer {
 
 .breadcrumbs span {
     margin: 0 7px;
-    color: #999999; /* Lighter color for the separator */
+    color: #999999; 
 }
 
 .footer-contact, .footer-address, .footer-hours {
